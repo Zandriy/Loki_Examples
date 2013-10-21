@@ -26,17 +26,21 @@ void TestFunction(int i);
 // in this example
 const char* TestFunction(double, double)
 {
-	static const char buffer[] = "Hello, world! === const char* TestFunction(double, double) ===";
+	static const char buffer[] = "Hello, world! === const char* TestFunction(double, double) ===\n";
 	// It's safe to return a pointer to a static buffer
 	return buffer;
 }
 
 int main()
 {
+	///// 5.6
+	cout << "\n***** 5.6\n";
 	TestFunctor f;
 	Functor<void, LOKI_TYPELIST_2(int, double)> cmd(f);
 	cmd(4, 4.5);
 
+	///// 5.7
+	cout << "\n***** 5.7\n";
 	// Typedef used for convenience
 	typedef void (*TpFun)(int, double);
 	// Method 1: use an initialization
@@ -48,6 +52,8 @@ int main()
 			static_cast<TpFun>(TestFunction)); // Ok
 	cmd2(4, 4.5);
 
+	///// 5.8
+	cout << "\n***** 5.8\n";
 	typedef const char* (*TpStrFun)(double, double);
 	TpStrFun pStrF = TestFunction;
 	Functor<string, LOKI_TYPELIST_2(int, int)> cmd3(pStrF);
