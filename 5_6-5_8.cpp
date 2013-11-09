@@ -1,6 +1,6 @@
 #define LOKI_FUNCTOR_IS_NOT_A_SMALLOBJECT 1
 
-#include "loki/Functor.h"
+#include <loki/Functor.h>
 #include <iostream>
 #include <string>
 
@@ -62,3 +62,5 @@ int main()
 
 	return 0;
 }
+
+// clang++ -std=c++11 -I. 5_6-5_8.cpp

@@ -1,6 +1,6 @@
 #define LOKI_FUNCTOR_IS_NOT_A_SMALLOBJECT 1
 
-#include "loki/Functor.h"
+#include <loki/Functor.h>
 #include <iostream>
 #include <string>
 
@@ -59,3 +59,6 @@ int main()
 	chainF();
 	return 0;
 }
+
+
+// clang++ -std=c++11 -I. 5_9-5_11.cpp
