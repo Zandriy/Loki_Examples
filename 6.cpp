@@ -1,4 +1,3 @@
-#include <stdlib.h>
 #include <loki/Singleton.h>
 #include <iostream>
 #include <string>
