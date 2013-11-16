@@ -71,6 +71,7 @@ int Pear::s_Differ = 0;
 typedef SmartPtr<Apple> SP_Default;
 typedef SmartPtr<Pear, DeepCopy> SP_DeepCopy;
 typedef SmartPtr<Pear, DeepCopy, AllowConversion> SP_DeepCopy_AllowConversion;
+typedef SmartPtr<Pear, DeepCopy, AllowConversion, AssertCheckStrict> SP_DeepCopy_AllowConversion_AssertCheckStrict;
 
 int main()
 {
@@ -107,6 +108,19 @@ int main()
 	p3 = p4;
 	p3->Say();
 	p4->Say();
+
+	cout << "====================================\n";
+
+
+	// SP_DeepCopy_AllowConversion_AssertCheckStrict p6; // Assert
+	// SP_DeepCopy_AllowConversion_AssertCheckStrict p7; // Assert
+  SP_DeepCopy_AllowConversion_AssertCheckStrict p6	= new Pear( "<DeepCopy, AllowConversion, AssertCheckStrict, DefaultSPStorage, LOKI_DEFAULT_CONSTNESS>" );
+  SP_DeepCopy_AllowConversion_AssertCheckStrict p7	= new Pear( "<DeepCopy, AllowConversion, AssertCheckStrict, DefaultSPStorage, LOKI_DEFAULT_CONSTNESS>" );
+	// p1 = NULL; // !!! Assert
+	Pear *p8 = p7;
+	p6 = p7;
+	p6->Say();
+	p7->Say();
 
 	cout << "====================================\n";
 
