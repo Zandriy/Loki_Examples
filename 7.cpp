@@ -15,7 +15,7 @@ class Fruit
 	 	{
 			cout << "Constructor of " << m_Fruit << "-" << m_Differ << " for " << m_SP_description << endl;
 	 	}
-		~Fruit()
+		virtual ~Fruit()
 	 	{
 			cout << "Destructor of " << m_Fruit << "-" << m_Differ << " for " << m_SP_description << endl;
 	 	}
